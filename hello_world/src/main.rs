@@ -1,6 +1,11 @@
 use regex::Regex;
 use std::env;
 
+// Declare the external function
+extern "C" {
+    fn hello();
+}
+
 fn main() {
     println!("Hello, world!");
     let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
@@ -23,4 +28,9 @@ fn main() {
     // The proper way to read this is:
     let foo_bar = env::var("FOO_BAR");
     println!("FOO_BAR *{:?}*", foo_bar);
+
+    // Call the C function
+    unsafe {
+        hello();
+    }
 }
