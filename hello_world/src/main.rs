@@ -9,4 +9,7 @@ fn main() {
             println!("foo");
         }
     }
+    // example of reading an environment variable:
+    let version = env!("CARGO_PKG_VERSION");
+    println!("Version = {}", version);
 }
