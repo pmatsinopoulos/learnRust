@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+if ARGV[1] == "--help"
+  puts "cargo #{ARGV[0]}"
+  puts "...it will print a nice message from Ruby"
+  exit
+end
+
+puts "Hello Ruby!"
